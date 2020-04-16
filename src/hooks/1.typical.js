@@ -40,10 +40,12 @@ class Wrapper extends React.Component {
   onMouseOut = () => this.setState({hovering: false});
 
   render() {
-    <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
-      {this.props.children(this.state.hovering)}
-    </div>
-  }
+    return (
+      <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
+        {this.props.children(this.state.hovering)}
+      </div>
+    )  
+}
 }
 
 

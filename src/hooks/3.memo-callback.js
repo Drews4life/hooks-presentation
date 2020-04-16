@@ -17,7 +17,7 @@ export default () => {
       const startPerformance = performance.now();
       console.log('[3.memo.js] memo func started: ');
 
-      while(i < 10000) {
+      while(i < 5000) {
         i++;
         console.log('[3.memo.js] bzzzz... standby')
       }
