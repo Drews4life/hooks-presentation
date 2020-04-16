@@ -62,7 +62,13 @@ export default () => {
       let val = action()
       setValue(val)
     }, [action]) 
-  
+
+
+    // useLayoutEffect (() => {
+    //   let val = action()
+    //   setValue(val)
+    // }, [action]) 
+
     return(
       <React.Fragment>
         Child : {value}

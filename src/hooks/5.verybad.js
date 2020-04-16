@@ -58,7 +58,7 @@ export default () => {
 
 
 
-// ochen neochen
+// very neochen
 const FavoriteEvents = () => {
     const [events, setEvents] = useState([{ name: 'Football' }]);
   
@@ -80,7 +80,7 @@ const FavoriteEvents = () => {
   }
 
 
-
+// seems good 
 const EVENT_ACTION_TYPES = {
     ADD_EVENT: 'add_event',
     UPDATE_EVENT: 'update_event',
