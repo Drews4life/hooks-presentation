@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect, useReducer, useMemo } from 'react';
+import React, { useCallback, useState, useReducer, } from 'react';
 import './common.css';
 
 export default () => {
@@ -7,13 +7,12 @@ export default () => {
     const [thirdCounter, setThirdCounter ] = useState(0);
 
     const incrementFirst = useCallback(
-        // always 0 + 1, because it keeps old reference
         () => setFirstCounter(firstCounter + 1),
         []
     );
 
     const incrementSecond = useCallback(
-        () => setSecondCounter((oldSecondCounter) => oldSecondCounter + 1),
+        () => setSecondCounter((latestCounter) => latestCounter + 1),
         [],
     )
 

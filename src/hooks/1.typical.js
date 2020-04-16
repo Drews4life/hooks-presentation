@@ -1,35 +1,22 @@
 import React, { useState } from 'react';
 
 
-
-/*
-
-Don’t call Hooks inside loops, conditions, or nested functions. 
-Instead, always use Hooks at the top level of your React function.
-
-*/
-
-/*
-
-Only call hooks from functional components
-
-*/
-
 const useField = (defaultValue) => {
     const [value, setValue] = useState(defaultValue);
-    const [dirty, setDirty] = useState(false);
+    const [focus, setFocus] = useState(false);
     const [touched, setTouched] = useState(false);
   
     function handleChange(e) {
       setValue(e.target.value);
       setTouched(true);
+      setFocus(true);
     }
   
     return {
       value, 
       setValue,
-      dirty, 
-      setDirty,
+      focus,
+      setFocus,
       touched, 
       setTouched,
       handleChange
@@ -42,6 +29,32 @@ export default () => {
   
     return <input name="username" value={username.value} onChange={username.handleChange}/>;
 }
+
+
+
+class Wrapper extends React.Component {
+
+  state = { hovering: false };
+
+  onMouseOut = () => this.setState({hovering: true});
+  onMouseOut = () => this.setState({hovering: false});
+
+  render() {
+    <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
+      {this.props.children(this.state.hovering)}
+    </div>
+  }
+}
+
+
+const CompwithHover = () => (
+  <Wrapper>
+    {(hovering) => (
+      <div>...</div>
+    )}
+  </Wrapper>
+)
+
 
 
 
